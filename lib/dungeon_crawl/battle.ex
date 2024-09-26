@@ -2,6 +2,10 @@ defmodule DungeonCrawl.Battle do
   alias DungeonCrawl.Character
   alias Mix.Shell.IO, as: Shell
 
+  @spec fight(Character.t(), Character.t()) :: {Character.t(), Character.t()}
+  @doc """
+  Make `char_a` fights `char_b` in a turn based fight. `char_a` will hit first.
+  """
   def fight(
         char_a = %{hit_points: hit_points_a},
         char_b = %{hit_points: hit_points_b}
